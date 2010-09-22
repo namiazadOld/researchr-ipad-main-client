@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "DetailViewController.h"
+#import "HomeViewController.h"
 
 
 @implementation RootViewController
@@ -20,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	
+	
+	
+	
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 }
@@ -131,7 +137,14 @@
     /*
      When a row is selected, set the detail view controller's detail item to the item associated with the selected row.
      */
-    detailViewController.detailItem = [NSString stringWithFormat:@"Row %d", indexPath.row];
+	if (indexPath.row == 0)
+	{
+		//HomeViewController view
+		//detailViewController.detailItem
+	}
+    //detailViewController.detailItem = [NSString stringWithFormat:@"Row %d", indexPath.row];
+	HomeViewController *controller = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:[NSBundle mainBundle]];
+	detailViewController.currentView = controller.view;
 }
 
 
