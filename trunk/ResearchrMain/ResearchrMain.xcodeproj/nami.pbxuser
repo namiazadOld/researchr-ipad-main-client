@@ -15,8 +15,30 @@
 			398CD2CF124A027700C3156F /* ResearchrMain */,
 		);
 		perUserDictionary = {
-			PBXPerProjectTemplateStateSaveDate = 306840183;
-			PBXWorkspaceStateSaveDate = 306840183;
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 306840498;
+			PBXWorkspaceStateSaveDate = 306840498;
 		};
 		sourceControlManager = 398CD2D9124A029600C3156F /* Source Control */;
 		userBuildSettings = {
@@ -55,7 +77,7 @@
 		isSCMEnabled = 0;
 		scmConfiguration = {
 			repositoryNamesForRoots = {
-				"" = "";
+				"" = "researchr-main";
 			};
 		};
 	};
