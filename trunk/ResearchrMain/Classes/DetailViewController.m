@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "RootViewController.h"
+#import "HomeViewController.h"
 
 
 @interface DetailViewController ()
@@ -19,7 +20,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, detailItem, detailDescriptionLabel;
+@synthesize toolbar, popoverController, currentView;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -27,10 +28,13 @@
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
  */
-- (void)setDetailItem:(id)newDetailItem {
-    if (detailItem != newDetailItem) {
-        [detailItem release];
-        detailItem = [newDetailItem retain];
+- (void)setCurrentView:(UIView*)newView {
+	
+	NSLog(@"setCurrentView-Beginning");
+	
+    if (![currentView isEqual:newView]) {
+        [currentView release];
+        currentView = [newView retain];
         
         // Update the view.
         [self configureView];
@@ -44,7 +48,12 @@
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    detailDescriptionLabel.text = [detailItem description];   
+    //detailDescriptionLabel.text = [detailItem description];
+	
+	NSLog(@"configureView-Beginning");
+	
+	[self.view addSubview:currentView];
+	
 }
 
 
