@@ -59,6 +59,7 @@
     [toolbar setItems:items animated:YES];
     [items release];
     self.popoverController = pc;
+	
 }
 
 
