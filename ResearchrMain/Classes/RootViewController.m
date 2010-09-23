@@ -9,11 +9,12 @@
 #import "RootViewController.h"
 #import "DetailViewController.h"
 #import "HomeViewController.h"
+#import "ViewItem.h"
 
 
 @implementation RootViewController
 
-@synthesize detailViewController;
+@synthesize detailViewController, mainItem;
 
 
 #pragma mark -
@@ -22,12 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	
-	
-	
-	
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+	
+	
+	HomeViewController *homeController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:[NSBundle mainBundle]];
+	
+	self.mainItem = [[NSMutableDictionary alloc] init];
+	[self.mainItem setValue:[[ViewItem alloc] init: @"Home" Controller: homeController] forKey:@"0"];
+	
+	//self.mainItem = [[NSMutableDictionary alloc] initWithCapacity:<#(NSUInteger)numItems#>];
+	//[[ViewItem alloc] ]
+	//[mainItem setObject:homeController forKey:[ViewItem alloc]];
 }
 
 /*
@@ -68,7 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 10;
+    return 1;
 }
 
 
@@ -84,7 +91,11 @@
     }
     
     // Configure the cell.
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %d", indexPath.row];
+	
+	ViewItem *item = (ViewItem*)[self.mainItem objectForKey:[NSString stringWithFormat:@"%d", indexPath.row]];
+    cell.textLabel.text = item.description;
+
+	
     return cell;
 }
 
@@ -137,14 +148,10 @@
     /*
      When a row is selected, set the detail view controller's detail item to the item associated with the selected row.
      */
-	if (indexPath.row == 0)
-	{
-		//HomeViewController view
-		//detailViewController.detailItem
-	}
-    //detailViewController.detailItem = [NSString stringWithFormat:@"Row %d", indexPath.row];
-	HomeViewController *controller = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:[NSBundle mainBundle]];
-	detailViewController.currentView = controller.view;
+	
+	ViewItem *item = (ViewItem*)[self.mainItem objectForKey:[NSString stringWithFormat:@"%d", indexPath.row]];
+	detailViewController.currentView = item.controller.view;
+
 }
 
 

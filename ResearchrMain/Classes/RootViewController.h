@@ -12,8 +12,10 @@
 
 @interface RootViewController : UITableViewController {
     DetailViewController *detailViewController;
+	NSMutableDictionary *mainItems;
 }
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) NSMutableDictionary *mainItem;
 
 @end

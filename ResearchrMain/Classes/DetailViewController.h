@@ -13,6 +13,7 @@
     UIPopoverController *popoverController;
     UIToolbar *toolbar;
 	UIView *currentView;
+	UIView *container;
     
     id detailItem;
     UILabel *detailDescriptionLabel;
@@ -20,7 +21,7 @@
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UIView *currentView;
-
+@property (nonatomic, retain) IBOutlet UIView *container;
 
 
 
