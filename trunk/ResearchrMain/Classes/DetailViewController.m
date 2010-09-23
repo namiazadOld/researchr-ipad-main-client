@@ -20,7 +20,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, currentView;
+@synthesize toolbar, popoverController, currentView, container;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -52,7 +52,7 @@
 	
 	NSLog(@"configureView-Beginning");
 	
-	[self.view addSubview:currentView];
+	[self.container addSubview:currentView];
 	
 }
 
