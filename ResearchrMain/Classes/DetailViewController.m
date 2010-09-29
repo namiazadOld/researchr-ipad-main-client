@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "RootViewController.h"
 #import "HomeViewController.h"
+#import "SignInViewController.h"
 
 
 @interface DetailViewController ()
@@ -20,10 +21,22 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, currentView, container;
+@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn;
 
 #pragma mark -
 #pragma mark Managing the detail item
+
+
+-(IBAction) signIn: (id)sender
+{
+	SignInViewController *signInController = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:[NSBundle mainBundle]];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:signInController];
+	
+	navController.modalPresentationStyle = UIModalPresentationFullScreen;
+	[self presentModalViewController:navController animated:YES];
+
+}
 
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.

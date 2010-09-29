@@ -19,6 +19,8 @@
 		39374A14124BA27400D31B0F /* ViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 39374A13124BA27400D31B0F /* ViewItem.m */; };
 		398CD581124A5BAE00C3156F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398CD57F124A5BAE00C3156F /* HomeViewController.m */; };
 		398CD582124A5BAE00C3156F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398CD580124A5BAE00C3156F /* HomeViewController.xib */; };
+		39BFD10312536BB7009EB483 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BFD10112536BB7009EB483 /* SignInViewController.m */; };
+		39BFD10412536BB7009EB483 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD10212536BB7009EB483 /* SignInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		398CD57E124A5BAE00C3156F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
 		398CD57F124A5BAE00C3156F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		398CD580124A5BAE00C3156F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		39BFD10012536BB7009EB483 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		39BFD10112536BB7009EB483 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		39BFD10212536BB7009EB483 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ResearchrMain-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ResearchrMain-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +76,9 @@
 				2804200A108E984D000629CD /* DetailViewController.m */,
 				39374A12124BA27400D31B0F /* ViewItem.h */,
 				39374A13124BA27400D31B0F /* ViewItem.m */,
+				39BFD10012536BB7009EB483 /* SignInViewController.h */,
+				39BFD10112536BB7009EB483 /* SignInViewController.m */,
+				39BFD10212536BB7009EB483 /* SignInViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2804203C108E9BAB000629CD /* DetailView.xib in Resources */,
 				398CD582124A5BAE00C3156F /* HomeViewController.xib in Resources */,
+				39BFD10412536BB7009EB483 /* SignInViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +202,7 @@
 				2804200C108E984D000629CD /* DetailViewController.m in Sources */,
 				398CD581124A5BAE00C3156F /* HomeViewController.m in Sources */,
 				39374A14124BA27400D31B0F /* ViewItem.m in Sources */,
+				39BFD10312536BB7009EB483 /* SignInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
