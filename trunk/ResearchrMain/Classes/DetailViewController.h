@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SignInViewController.h"
 
-@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
+@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, NotifyParent> {
     
     UIPopoverController *popoverController;
     UIToolbar *toolbar;

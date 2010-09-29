@@ -31,9 +31,11 @@
 {
 	SignInViewController *signInController = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:[NSBundle mainBundle]];
 	
+	signInController.delegate = self;
+	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:signInController];
 	
-	navController.modalPresentationStyle = UIModalPresentationFullScreen;
+	navController.modalPresentationStyle = UIModalPresentationFormSheet;
 	[self presentModalViewController:navController animated:YES];
 
 }
@@ -72,6 +74,12 @@
 
 #pragma mark -
 #pragma mark Split view support
+
+
+-(void)dismissRequested:(BOOL)isOK
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
     
