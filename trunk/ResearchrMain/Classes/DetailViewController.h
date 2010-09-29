@@ -12,17 +12,22 @@
     
     UIPopoverController *popoverController;
     UIToolbar *toolbar;
+	UIToolbar *bottomToolbar;
 	UIView *currentView;
 	UIView *container;
+	
+	UIBarButtonItem *buttonItemSignIn;
     
     id detailItem;
     UILabel *detailDescriptionLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, retain) IBOutlet UIToolbar *bottomToolbar;
 @property (nonatomic, retain) IBOutlet UIView *currentView;
 @property (nonatomic, retain) IBOutlet UIView *container;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *buttonItemSignIn;
 
-
+-(IBAction) signIn: (id)sender;
 
 @end
