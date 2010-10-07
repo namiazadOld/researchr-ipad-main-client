@@ -21,7 +21,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn;
+@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn, textView, imageView;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -79,6 +79,39 @@
 -(void)dismissRequested:(BOOL)isOK
 {
 	[self dismissModalViewControllerAnimated:YES];
+	
+	NSURL *myUrl = [NSURL URLWithString:@"http://researchr.org/api/person/eelcovisser"];
+	//NSURL *myUrl = [NSURL URLWithString:@"http://chart.apis.google.com/chart?cht=p3&chd=t:60,40&chs=250x100"];
+	NSMutableURLRequest *myRequest = [NSMutableURLRequest requestWithURL:myUrl];
+	
+	//[myRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-type"];
+	[myRequest setHTTPMethod:@"GET"];
+	//[myRequest setHTTPBody:NULL];
+	NSURLResponse *response;
+	NSError *error;
+	NSData *myReturn = [NSURLConnection sendSynchronousRequest:myRequest returningResponse:&response error:&error];
+	
+	if (myReturn == NULL)
+	{
+		NSLog(@"WTF");
+		NSLog([error localizedDescription]);
+		
+		NSString* content = [[NSString alloc]initWithFormat:@"Error: %s", [error localizedDescription]];
+		
+		textView.text = content;
+	}
+	else {
+		
+		NSString *content = [[NSString alloc] initWithData:myReturn encoding:NSASCIIStringEncoding];
+		textView.text = content;
+		//UIImage *img = [[UIImage alloc] initWithData:myReturn];
+		//[imageView setImage:img];
+		//[img release];
+	}
+
+	
+
+
 }
 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {

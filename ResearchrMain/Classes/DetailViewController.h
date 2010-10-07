@@ -17,6 +17,9 @@
 	UIView *currentView;
 	UIView *container;
 	
+	UITextView *textView;
+	UIImageView *imageView;
+	
 	UIBarButtonItem *buttonItemSignIn;
     
     id detailItem;
@@ -28,6 +31,8 @@
 @property (nonatomic, retain) IBOutlet UIView *currentView;
 @property (nonatomic, retain) IBOutlet UIView *container;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *buttonItemSignIn;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 -(IBAction) signIn: (id)sender;
 
