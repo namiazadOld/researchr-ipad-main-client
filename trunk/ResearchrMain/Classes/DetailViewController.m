@@ -10,6 +10,8 @@
 #import "RootViewController.h"
 #import "HomeViewController.h"
 #import "SignInViewController.h"
+#import "JSON.h"
+#import "ResearchrProxy.h"
 
 
 @interface DetailViewController ()
@@ -21,7 +23,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn, textView, imageView;
+@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn, textView;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -80,37 +82,34 @@
 {
 	[self dismissModalViewControllerAnimated:YES];
 	
-	NSURL *myUrl = [NSURL URLWithString:@"http://researchr.org/api/person/eelcovisser"];
-	//NSURL *myUrl = [NSURL URLWithString:@"http://chart.apis.google.com/chart?cht=p3&chd=t:60,40&chs=250x100"];
-	NSMutableURLRequest *myRequest = [NSMutableURLRequest requestWithURL:myUrl];
-	
-	//[myRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-type"];
-	[myRequest setHTTPMethod:@"GET"];
-	//[myRequest setHTTPBody:NULL];
-	NSURLResponse *response;
-	NSError *error;
-	NSData *myReturn = [NSURLConnection sendSynchronousRequest:myRequest returningResponse:&response error:&error];
-	
-	if (myReturn == NULL)
+	ResearchrProxy* proxy = [[ResearchrProxy alloc] init];
+	[proxy search:@"publication" searchTerm:@"web service"];
+}
+
+-(void) recursiveParser: (NSString*)key date:(id)value
+{
+	if ([value isKindOfClass:[NSDictionary class]])
 	{
-		NSLog(@"WTF");
-		NSLog([error localizedDescription]);
-		
-		NSString* content = [[NSString alloc]initWithFormat:@"Error: %s", [error localizedDescription]];
-		
-		textView.text = content;
+		//NSDictionary *dict = ((NSDictionary*) value);
+		NSEnumerator *enumerator = [value keyEnumerator];
+		id key;
+		while (key = [enumerator nextObject]) {
+			[self recursiveParser:key date:[value objectForKey:key]];
+		}
+	}
+	else if ([value isKindOfClass:[NSArray class]])
+	{
+		//NSArray *array = ((NSArray*) value);
+		NSEnumerator *enumerator = [value objectEnumerator
+									];
+		id object;
+		while ((object = [enumerator nextObject])) {
+			[self recursiveParser:key date:object];
+		}
 	}
 	else {
-		
-		NSString *content = [[NSString alloc] initWithData:myReturn encoding:NSASCIIStringEncoding];
-		textView.text = content;
-		//UIImage *img = [[UIImage alloc] initWithData:myReturn];
-		//[imageView setImage:img];
-		//[img release];
+		NSLog(@"%@ : %@", key, value);
 	}
-
-	
-
 
 }
 
