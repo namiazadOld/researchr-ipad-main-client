@@ -16,6 +16,6 @@
 -(NSString*) generateUrlPostfix: (NSString*)type action: (NSString*)action searchTerm:(NSString*)keyword;
 -(NSData*) search: (NSString*)type searchTerm:(NSString*)keyword;
 -(NSData*) callService: (NSString*)urlString;
--(NSArray*) searchPublication: (NSString*)keyword;
+-(NSMutableArray*) searchPublication: (NSString*)keyword;
 
 @end

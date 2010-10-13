@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseEntity.h"
 
 
-@interface Publication : NSObject {
+
+@interface Publication : BaseEntity {
 	NSString* title;
 	NSString* abstractContent;
 }
 
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSString* abstractContent;
+
 
 @end

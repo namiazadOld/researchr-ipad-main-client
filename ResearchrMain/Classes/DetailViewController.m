@@ -10,8 +10,11 @@
 #import "RootViewController.h"
 #import "HomeViewController.h"
 #import "SignInViewController.h"
-#import "JSON.h"
 #import "ResearchrProxy.h"
+#import "Publication.h"
+#import "BaseListViewController.h"
+#import "PublicationSummaryView.h"
+
 
 
 @interface DetailViewController ()
@@ -23,7 +26,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn, textView;
+@synthesize toolbar, popoverController, currentView, container, bottomToolbar, buttonItemSignIn, searchBar;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -39,7 +42,7 @@
 	
 	navController.modalPresentationStyle = UIModalPresentationFormSheet;
 	[self presentModalViewController:navController animated:YES];
-
+	
 }
 
 /*
@@ -77,41 +80,36 @@
 #pragma mark -
 #pragma mark Split view support
 
+-(void) displaySearchResult: (NSString*) keyword
+{
+	
+	ResearchrProxy *proxy = [[ResearchrProxy alloc] init];
+	NSMutableArray *publications = [proxy searchPublication:keyword];
+	
+    BaseListViewController* resultsView = [BaseEntity getListView:publications];
+	[self.container addSubview:resultsView.view];
+	
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar*) theSearchBar
+{
+	[theSearchBar resignFirstResponder];
+	[self displaySearchResult:theSearchBar.text];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField*) theTextField
+{
+	[theTextField resignFirstResponder];
+	return YES;
+}
 
 -(void)dismissRequested:(BOOL)isOK
 {
 	[self dismissModalViewControllerAnimated:YES];
 	
-	ResearchrProxy* proxy = [[ResearchrProxy alloc] init];
-	[proxy search:@"publication" searchTerm:@"web service"];
+	NSLog(searchBar.text);
 }
 
--(void) recursiveParser: (NSString*)key date:(id)value
-{
-	if ([value isKindOfClass:[NSDictionary class]])
-	{
-		//NSDictionary *dict = ((NSDictionary*) value);
-		NSEnumerator *enumerator = [value keyEnumerator];
-		id key;
-		while (key = [enumerator nextObject]) {
-			[self recursiveParser:key date:[value objectForKey:key]];
-		}
-	}
-	else if ([value isKindOfClass:[NSArray class]])
-	{
-		//NSArray *array = ((NSArray*) value);
-		NSEnumerator *enumerator = [value objectEnumerator
-									];
-		id object;
-		while ((object = [enumerator nextObject])) {
-			[self recursiveParser:key date:object];
-		}
-	}
-	else {
-		NSLog(@"%@ : %@", key, value);
-	}
-
-}
 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
     
@@ -147,12 +145,13 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+//Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	searchBar.delegate = self;
     [super viewDidLoad];
 }
- */
+ 
 
 /*
 - (void)viewWillAppear:(BOOL)animated {

@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "SignInViewController.h"
 
-@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, NotifyParent> {
+@interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, NotifyParent, UISearchBarDelegate, UITextFieldDelegate> {
     
     UIPopoverController *popoverController;
     UIToolbar *toolbar;
 	UIToolbar *bottomToolbar;
 	UIView *currentView;
 	UIView *container;
-	
-	UITextView *textView;
+	UISearchBar *searchBar;
+
 	
 	UIBarButtonItem *buttonItemSignIn;
     
@@ -30,7 +30,8 @@
 @property (nonatomic, retain) IBOutlet UIView *currentView;
 @property (nonatomic, retain) IBOutlet UIView *container;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *buttonItemSignIn;
-@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+
 
 
 -(IBAction) signIn: (id)sender;
