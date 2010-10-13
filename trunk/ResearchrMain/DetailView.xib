@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="67"/>
+			<integer value="83"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -105,28 +105,6 @@
 					<object class="IBUIView" id="181956938">
 						<reference key="NSNextResponder" ref="647120888"/>
 						<int key="NSvFlags">292</int>
-						<object class="NSMutableArray" key="NSSubviews">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUITextView" id="559290973">
-								<reference key="NSNextResponder" ref="181956938"/>
-								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{41, 20}, {302, 239}}</string>
-								<reference key="NSSuperview" ref="181956938"/>
-								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MSAxIDEAA</bytes>
-								</object>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<bool key="IBUIMultipleTouchEnabled">YES</bool>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
-								<string key="IBUIText">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
-									<int key="IBUIAutocapitalizationType">2</int>
-									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								</object>
-							</object>
-						</object>
 						<string key="NSFrame">{{1, 44}, {767, 916}}</string>
 						<reference key="NSSuperview" ref="647120888"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -225,11 +203,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">textView</string>
+						<string key="label">searchBar</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="559290973"/>
+						<reference key="destination" ref="537157327"/>
 					</object>
-					<int key="connectionID">86</int>
+					<int key="connectionID">89</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="537157327"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">93</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -274,7 +260,6 @@
 						<reference key="object" ref="181956938"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="559290973"/>
 						</object>
 						<reference key="parent" ref="647120888"/>
 					</object>
@@ -321,11 +306,6 @@
 						<reference key="object" ref="199494178"/>
 						<reference key="parent" ref="410698538"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">85</int>
-						<reference key="object" ref="559290973"/>
-						<reference key="parent" ref="181956938"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -343,8 +323,6 @@
 					<string>8.IBPluginDependency</string>
 					<string>82.IBPluginDependency</string>
 					<string>84.IBPluginDependency</string>
-					<string>85.IBPluginDependency</string>
-					<string>85.IBViewBoundsToFrameTransform</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -355,14 +333,10 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{370, 77}, {783, 679}}</string>
+					<string>{{497, 75}, {783, 681}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABC9AAAxCKAAA</bytes>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -381,7 +355,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">88</int>
+			<int key="maxID">93</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -409,7 +383,7 @@
 							<string>container</string>
 							<string>currentView</string>
 							<string>detailItem</string>
-							<string>textView</string>
+							<string>searchBar</string>
 							<string>toolbar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -419,7 +393,7 @@
 							<string>UIView</string>
 							<string>UIView</string>
 							<string>id</string>
-							<string>UITextView</string>
+							<string>UISearchBar</string>
 							<string>UIToolbar</string>
 						</object>
 					</object>
@@ -432,7 +406,7 @@
 							<string>container</string>
 							<string>currentView</string>
 							<string>detailItem</string>
-							<string>textView</string>
+							<string>searchBar</string>
 							<string>toolbar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -458,8 +432,8 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">textView</string>
-								<string key="candidateClassName">UITextView</string>
+								<string key="name">searchBar</string>
+								<string key="candidateClassName">UISearchBar</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">toolbar</string>
@@ -638,14 +612,6 @@
 					<reference key="sourceIdentifier" ref="786211723"/>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">UIScrollView</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UIScrollView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">UISearchBar</string>
 					<string key="superclassName">UIView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -659,14 +625,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UISearchDisplayController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">UITextView</string>
-					<string key="superclassName">UIScrollView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UITextView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

@@ -41,7 +41,7 @@
 	return [self callService:searchUrlString];
 }
 
--(NSArray*) searchPublication: (NSString*)keyword
+-(NSMutableArray*) searchPublication: (NSString*)keyword
 {
 	NSData* rawSearchResult = [self search:@"publication" searchTerm:keyword];
 	return [Publication MapJsonResult:rawSearchResult];
