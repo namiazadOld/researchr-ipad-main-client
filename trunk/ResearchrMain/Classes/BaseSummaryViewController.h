@@ -11,8 +11,10 @@
 
 
 @interface BaseSummaryViewController : UITableViewCell {
-
+	float height;
 }
+
+@property (nonatomic, retain) float height;
 
 -(void)initWithName:(NSString*)name;
 
