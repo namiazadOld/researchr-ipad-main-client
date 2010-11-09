@@ -11,6 +11,8 @@
 
 @implementation BaseEntity
 
+@synthesize name;
+
 +(BaseListViewController*) getListView: (NSMutableArray*)list
 {
 	BaseListViewController *listController = [[BaseListViewController alloc] 
@@ -18,6 +20,15 @@
 											  bundle:[NSBundle mainBundle]];
 	[listController initWithEntities:list];
 	return listController;
+}
+
+-(BaseSummaryViewController*)getSummaryView
+{
+	BaseSummaryViewController *summaryController = [[BaseSummaryViewController alloc] 
+													initWithNibName:@"BaseSummaryViewController" 
+													bundle:[NSBundle mainBundle]];
+	[summaryController initWithName:self.name];
+	return summaryController;
 }
 
 

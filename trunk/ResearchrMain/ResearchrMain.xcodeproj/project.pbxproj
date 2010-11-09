@@ -28,6 +28,7 @@
 		399F3A131266163B00F58272 /* BaseSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F3A111266163B00F58272 /* BaseSummaryViewController.m */; };
 		399F3A141266163B00F58272 /* BaseSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399F3A121266163B00F58272 /* BaseSummaryViewController.xib */; };
 		399F3A241266170C00F58272 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F3A231266170C00F58272 /* BaseEntity.m */; };
+		39AD8CBD1289B7230024290E /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AD8CBC1289B7230024290E /* Author.m */; };
 		39BFD10312536BB7009EB483 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BFD10112536BB7009EB483 /* SignInViewController.m */; };
 		39BFD10412536BB7009EB483 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD10212536BB7009EB483 /* SignInViewController.xib */; };
 		39D9D456125E0F0F00088D03 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D9D44D125E0F0F00088D03 /* NSObject+SBJSON.m */; };
@@ -72,6 +73,8 @@
 		399F3A121266163B00F58272 /* BaseSummaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseSummaryViewController.xib; sourceTree = "<group>"; };
 		399F3A221266170C00F58272 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseEntity.h; sourceTree = "<group>"; };
 		399F3A231266170C00F58272 /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEntity.m; sourceTree = "<group>"; };
+		39AD8CBB1289B7230024290E /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		39AD8CBC1289B7230024290E /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		39BFD10012536BB7009EB483 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		39BFD10112536BB7009EB483 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		39BFD10212536BB7009EB483 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				399F38C81265F2B200F58272 /* Publication.m */,
 				399F3A221266170C00F58272 /* BaseEntity.h */,
 				399F3A231266170C00F58272 /* BaseEntity.m */,
+				39AD8CBB1289B7230024290E /* Author.h */,
+				39AD8CBC1289B7230024290E /* Author.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				399F39B112660F8B00F58272 /* PublicationSummaryView.m in Sources */,
 				399F3A131266163B00F58272 /* BaseSummaryViewController.m in Sources */,
 				399F3A241266170C00F58272 /* BaseEntity.m in Sources */,
+				39AD8CBD1289B7230024290E /* Author.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

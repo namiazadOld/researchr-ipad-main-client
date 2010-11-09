@@ -8,6 +8,7 @@
 
 #import "ResearchrProxy.h"
 #import "Publication.h"
+#import "JSON.h"
 
 
 @implementation ResearchrProxy
@@ -44,7 +45,19 @@
 -(NSMutableArray*) searchPublication: (NSString*)keyword
 {
 	NSData* rawSearchResult = [self search:@"publication" searchTerm:keyword];
-	return [Publication MapJsonResult:rawSearchResult];
+	
+	SBJsonParser *parser =[[SBJsonParser alloc] init];
+	NSString *content = [[NSString alloc] initWithData:rawSearchResult encoding:NSASCIIStringEncoding];
+	NSDictionary *dictionary = [parser objectWithString:content];
+	
+	NSEnumerator *enumerator = [dictionary keyEnumerator];
+	NSString* key;
+	while (key = [enumerator nextObject]) {
+		if ([key isEqualToString:@"result"])
+			return [Publication MapToPublicationList:[dictionary objectForKey:key]];
+	}
+	
+	return NULL;
 }
 
 @end

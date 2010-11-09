@@ -34,6 +34,10 @@
     return YES;
 }
 
+-(void)initWithName:(NSString*)name
+{
+}
+
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
