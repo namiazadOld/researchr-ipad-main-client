@@ -14,7 +14,7 @@
 
 @implementation Publication
 
-@synthesize title, abstractContent;
+@synthesize title, abstractContent, authors;
 
 //implementation of base class to return summary view
 -(BaseSummaryViewController*)getSummaryView
@@ -54,29 +54,13 @@
 				[publication setTitle:value];
 			else if ([rawFieldKey isEqualToString: @"abstract"])
 				[publication setAbstractContent:value];
+			else if ([rawFieldKey isEqualToString: @"authors"])
+				[publication setAuthors:[Author MapToAuthorList:value]];
 		}
 		[publications addObject:publication];
 	}
 	
 	return publications;
-}
-
-+(NSMutableArray*) MapJsonResult: (NSData*)rawData
-{
-	SBJsonParser *parser =[[SBJsonParser alloc] init];
-	NSString *content = [[NSString alloc] initWithData:rawData encoding:NSASCIIStringEncoding];
-	NSDictionary *dictionary = [parser objectWithString:content];
-	
-	NSEnumerator *enumerator = [dictionary keyEnumerator];
-	NSString* key;
-	NSString* resultIdentifier = @"result";
-	
-	while (key = [enumerator nextObject]) {
-		if ([resultIdentifier isEqualToString:key])
-			return [Publication MapToPublicationList:[dictionary objectForKey:key]];
-	}
-	
-	return NULL;
 }
 
 @end

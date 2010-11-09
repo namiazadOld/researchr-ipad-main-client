@@ -82,11 +82,10 @@
 
 -(void) displaySearchResult: (NSString*) keyword
 {
-	
 	ResearchrProxy *proxy = [[ResearchrProxy alloc] init];
 	NSMutableArray *publications = [proxy searchPublication:keyword];
 	
-    BaseListViewController* resultsView = [BaseEntity getListView:publications];
+    BaseListViewController* resultsView = [Publication getListView:publications];
 	[self.container addSubview:resultsView.view];
 	
 }

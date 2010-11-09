@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
+
 @interface BaseSummaryViewController : UITableViewCell {
 
 }
+
+-(void)initWithName:(NSString*)name;
 
 @end
