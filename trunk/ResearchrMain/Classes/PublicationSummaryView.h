@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "Publication.h"
+#import "BaseSummaryViewController.h"
+#import "PublicationDetailView.h"
 
 
 
-@interface PublicationSummaryView : BaseSummaryViewController {
+@interface PublicationSummaryView : BaseSummaryViewController{
 	UILabel *labelTitle;
 	UITextView* textViewAbstract;
+	
 }
 
 @property(nonatomic, retain) IBOutlet UILabel *labelTitle;
 @property(nonatomic, retain) IBOutlet UITextView *textViewAbstract;
 
+-(IBAction) detailViewClicked:(id)sender;
 
--(void) initWithPublication:(Publication*)publication;
+
 
 @end

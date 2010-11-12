@@ -1,17 +1,15 @@
     //
-//  BaseSummaryViewController.m
+//  BaseDetailView.m
 //  ResearchrMain
 //
-//  Created by Nami on 10/13/10.
+//  Created by Nami on 11/12/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "BaseSummaryViewController.h"
+#import "BaseDetailView.h"
 
 
-
-@implementation BaseSummaryViewController
-@synthesize entity, delegate;
+@implementation BaseDetailView
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -34,11 +32,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
     return YES;
-}
-
--(void)initWithEntity:(BaseEntity*)entity
-{
-	
 }
 
 

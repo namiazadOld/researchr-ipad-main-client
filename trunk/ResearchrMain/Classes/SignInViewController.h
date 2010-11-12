@@ -16,8 +16,7 @@
 
 
 @interface SignInViewController : UIViewController {
-	id<NotifyParent> delegate;
-	
+	id<NotifyParent> delegate;	
 }
 
 @property (assign) id<NotifyParent> delegate;
