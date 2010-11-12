@@ -16,24 +16,6 @@
 
 @synthesize title, abstractContent, authors;
 
-//implementation of base class to return summary view
--(BaseSummaryViewController*)getSummaryView
-{
-	NSLog([self title]);
-		
-	NSArray* topLevelObjects = [[NSBundle mainBundle]loadNibNamed:@"PublicationSummaryView" owner:nil options:nil];
-	for (id currentObject in topLevelObjects)
-	{
-		if ([currentObject isKindOfClass:[UITableViewCell class]])
-		{
-			PublicationSummaryView* summary = (PublicationSummaryView*)currentObject;
-			[summary initWithPublication:self];
-			return summary;
-		}
-	}	
-}
-
-
 +(NSMutableArray*) MapToPublicationList: (NSArray*) rawList
 {
 	NSMutableArray *publications = [[NSMutableArray alloc] init];
@@ -62,5 +44,11 @@
 	
 	return publications;
 }
+
++(id)getPresenter
+{
+	return [[NSClassFromString(@"PublicationPresenter") alloc] init];
+}
+
 
 @end

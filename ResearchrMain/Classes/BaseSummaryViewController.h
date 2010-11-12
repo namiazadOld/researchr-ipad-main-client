@@ -7,15 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseEntity.h"
+#import "BaseDetailView.h"
 
+@protocol DetailViewRequested<NSObject>
+
+-(void) showDetail: (BaseDetailView*)detailView;
+
+@end
 
 
 @interface BaseSummaryViewController : UITableViewCell {
-	float height;
+	BaseEntity* entity;
+	id<DetailViewRequested> delegate;	
 }
 
-@property (nonatomic, retain) float height;
+@property (nonatomic, retain) BaseEntity* entity;
+@property (assign) id<DetailViewRequested> delegate;
 
--(void)initWithName:(NSString*)name;
+-(void)initWithEntity:(BaseEntity*)entity;
+-(float)getHeight;
 
 @end

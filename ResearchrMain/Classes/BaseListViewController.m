@@ -7,11 +7,12 @@
 //
 
 #import "BaseListViewController.h"
+#import "Publication.h";
 
 
 @implementation BaseListViewController
 
-@synthesize entityList;
+@synthesize entityList, summaries, containerControl;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -50,6 +51,7 @@
 */
 
 
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Override to allow orientations other than the default portrait orientation.
     return YES;
@@ -58,6 +60,22 @@
 -(void) initWithEntities: (NSMutableArray*) entities
 {
 	self.entityList = entities;
+	summaries = [[NSMutableArray alloc] init];
+}
+
+-(BaseSummaryViewController*)getSummaryForIndex: (int) row
+{
+	if ([summaries count] <= row)
+	{
+		BaseEntity* entity = [[self entityList] objectAtIndex:row];
+	
+		BaseSummaryViewController *cell = [[[entity class] getPresenter] getSummaryView:entity];
+		[cell setDelegate:self.containerControl];
+		
+		[summaries addObject:cell];
+	}
+	
+	return [summaries objectAtIndex:row];
 }
 
 #pragma mark -
@@ -79,20 +97,27 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	return [self getSummaryForIndex:indexPath.row];
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		cell = [[[self entityList] objectAtIndex:indexPath.row] getSummaryView];
-	}
+    //static NSString *CellIdentifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+//		cell = [[[self entityList] objectAtIndex:indexPath.row] getSummaryView];
+//		
+//	}
     
     // Configure the cell...
     
-    return cell;
+    //return cell;
 }
 
+- (CGFloat)tableView:(UITableView*) tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+	BaseSummaryViewController *summary = [self getSummaryForIndex: indexPath.row];
+	return [summary getHeight];
+}
 
 /*
 // Override to support conditional editing of the table view.

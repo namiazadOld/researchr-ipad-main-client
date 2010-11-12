@@ -7,18 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseSummaryViewController.h"
-#import "BaseListViewController.h"
-
 
 @interface BaseEntity : NSObject {
-	NSString *name;
+
 }
-
-@property (nonatomic, retain) NSString* name;
-
--(BaseSummaryViewController*) getSummaryView;
-+(BaseListViewController*) getListView: (NSMutableArray*)list;
-
 
 @end

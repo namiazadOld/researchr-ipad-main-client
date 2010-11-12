@@ -16,6 +16,12 @@
 		2804203C108E9BAB000629CD /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2804203B108E9BAB000629CD /* DetailView.xib */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		3936F366128B03BA007EBA84 /* BasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936F365128B03BA007EBA84 /* BasePresenter.m */; };
+		3936F36B128B0594007EBA84 /* PublicationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936F36A128B0594007EBA84 /* PublicationPresenter.m */; };
+		3936FD9A128CB51D002206BB /* PublicationDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936FD98128CB51D002206BB /* PublicationDetailView.m */; };
+		3936FD9B128CB51D002206BB /* PublicationDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3936FD99128CB51D002206BB /* PublicationDetailView.xib */; };
+		3936FD9F128CB534002206BB /* BaseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936FD9D128CB534002206BB /* BaseDetailView.m */; };
+		3936FDA0128CB534002206BB /* BaseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3936FD9E128CB534002206BB /* BaseDetailView.xib */; };
 		39374A14124BA27400D31B0F /* ViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 39374A13124BA27400D31B0F /* ViewItem.m */; };
 		398CD581124A5BAE00C3156F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398CD57F124A5BAE00C3156F /* HomeViewController.m */; };
 		398CD582124A5BAE00C3156F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398CD580124A5BAE00C3156F /* HomeViewController.xib */; };
@@ -53,6 +59,16 @@
 		28A0AAE50D9B0CCF005BE974 /* ResearchrMain_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResearchrMain_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3936F364128B03BA007EBA84 /* BasePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePresenter.h; sourceTree = "<group>"; };
+		3936F365128B03BA007EBA84 /* BasePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePresenter.m; sourceTree = "<group>"; };
+		3936F369128B0594007EBA84 /* PublicationPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicationPresenter.h; sourceTree = "<group>"; };
+		3936F36A128B0594007EBA84 /* PublicationPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicationPresenter.m; sourceTree = "<group>"; };
+		3936FD97128CB51D002206BB /* PublicationDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicationDetailView.h; sourceTree = "<group>"; };
+		3936FD98128CB51D002206BB /* PublicationDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicationDetailView.m; sourceTree = "<group>"; };
+		3936FD99128CB51D002206BB /* PublicationDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicationDetailView.xib; sourceTree = "<group>"; };
+		3936FD9C128CB534002206BB /* BaseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailView.h; sourceTree = "<group>"; };
+		3936FD9D128CB534002206BB /* BaseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailView.m; sourceTree = "<group>"; };
+		3936FD9E128CB534002206BB /* BaseDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseDetailView.xib; sourceTree = "<group>"; };
 		39374A12124BA27400D31B0F /* ViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewItem.h; sourceTree = "<group>"; };
 		39374A13124BA27400D31B0F /* ViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewItem.m; sourceTree = "<group>"; };
 		398CD57E124A5BAE00C3156F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
@@ -109,29 +125,14 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3936F363128B036D007EBA84 /* UI */,
 				399F38C61265F2A200F58272 /* Entities */,
-				398CD580124A5BAE00C3156F /* HomeViewController.xib */,
-				398CD57F124A5BAE00C3156F /* HomeViewController.m */,
-				398CD57E124A5BAE00C3156F /* HomeViewController.h */,
 				1D3623240D0F684500981E51 /* ResearchrMainAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ResearchrMainAppDelegate.m */,
-				28042007108E984D000629CD /* RootViewController.h */,
-				28042008108E984D000629CD /* RootViewController.m */,
-				28042009108E984D000629CD /* DetailViewController.h */,
-				2804200A108E984D000629CD /* DetailViewController.m */,
 				39374A12124BA27400D31B0F /* ViewItem.h */,
 				39374A13124BA27400D31B0F /* ViewItem.m */,
-				39BFD10012536BB7009EB483 /* SignInViewController.h */,
-				39BFD10112536BB7009EB483 /* SignInViewController.m */,
-				39BFD10212536BB7009EB483 /* SignInViewController.xib */,
 				399F38951265E9C000F58272 /* ResearchrProxy.h */,
 				399F38961265E9C000F58272 /* ResearchrProxy.m */,
-				399F399D12660BCD00F58272 /* BaseListViewController.h */,
-				399F399E12660BCD00F58272 /* BaseListViewController.m */,
-				399F399F12660BCD00F58272 /* BaseListViewController.xib */,
-				399F3A101266163A00F58272 /* BaseSummaryViewController.h */,
-				399F3A111266163B00F58272 /* BaseSummaryViewController.m */,
-				399F3A121266163B00F58272 /* BaseSummaryViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -186,6 +187,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3936F363128B036D007EBA84 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				398CD580124A5BAE00C3156F /* HomeViewController.xib */,
+				398CD57F124A5BAE00C3156F /* HomeViewController.m */,
+				398CD57E124A5BAE00C3156F /* HomeViewController.h */,
+				28042007108E984D000629CD /* RootViewController.h */,
+				28042008108E984D000629CD /* RootViewController.m */,
+				28042009108E984D000629CD /* DetailViewController.h */,
+				2804200A108E984D000629CD /* DetailViewController.m */,
+				39BFD10012536BB7009EB483 /* SignInViewController.h */,
+				39BFD10112536BB7009EB483 /* SignInViewController.m */,
+				39BFD10212536BB7009EB483 /* SignInViewController.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		399F38C61265F2A200F58272 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,9 +221,25 @@
 		399F39AD12660F6000F58272 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				399F399D12660BCD00F58272 /* BaseListViewController.h */,
+				399F399E12660BCD00F58272 /* BaseListViewController.m */,
+				399F399F12660BCD00F58272 /* BaseListViewController.xib */,
+				399F3A101266163A00F58272 /* BaseSummaryViewController.h */,
+				399F3A111266163B00F58272 /* BaseSummaryViewController.m */,
+				399F3A121266163B00F58272 /* BaseSummaryViewController.xib */,
 				399F39AE12660F8B00F58272 /* PublicationSummaryView.h */,
 				399F39AF12660F8B00F58272 /* PublicationSummaryView.m */,
 				399F39B012660F8B00F58272 /* PublicationSummaryView.xib */,
+				3936F364128B03BA007EBA84 /* BasePresenter.h */,
+				3936F365128B03BA007EBA84 /* BasePresenter.m */,
+				3936F369128B0594007EBA84 /* PublicationPresenter.h */,
+				3936F36A128B0594007EBA84 /* PublicationPresenter.m */,
+				3936FD97128CB51D002206BB /* PublicationDetailView.h */,
+				3936FD98128CB51D002206BB /* PublicationDetailView.m */,
+				3936FD99128CB51D002206BB /* PublicationDetailView.xib */,
+				3936FD9C128CB534002206BB /* BaseDetailView.h */,
+				3936FD9D128CB534002206BB /* BaseDetailView.m */,
+				3936FD9E128CB534002206BB /* BaseDetailView.xib */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -285,6 +319,8 @@
 				399F39A112660BCD00F58272 /* BaseListViewController.xib in Resources */,
 				399F39B212660F8B00F58272 /* PublicationSummaryView.xib in Resources */,
 				399F3A141266163B00F58272 /* BaseSummaryViewController.xib in Resources */,
+				3936FD9B128CB51D002206BB /* PublicationDetailView.xib in Resources */,
+				3936FDA0128CB534002206BB /* BaseDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +350,10 @@
 				399F3A131266163B00F58272 /* BaseSummaryViewController.m in Sources */,
 				399F3A241266170C00F58272 /* BaseEntity.m in Sources */,
 				39AD8CBD1289B7230024290E /* Author.m in Sources */,
+				3936F366128B03BA007EBA84 /* BasePresenter.m in Sources */,
+				3936F36B128B0594007EBA84 /* PublicationPresenter.m in Sources */,
+				3936FD9A128CB51D002206BB /* PublicationDetailView.m in Sources */,
+				3936FD9F128CB534002206BB /* BaseDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

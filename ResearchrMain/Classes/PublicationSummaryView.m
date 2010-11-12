@@ -7,17 +7,67 @@
 //
 
 #import "PublicationSummaryView.h"
+#import "BaseEntity.h"
 
 
 @implementation PublicationSummaryView
 
 @synthesize labelTitle, textViewAbstract;
 
--(void)initWithPublication:(Publication*)publication
+-(void)initWithEntity:(BaseEntity*)entity
 {
+	Publication* publication = entity;
+	[self setEntity:publication];
+	
 	labelTitle.text = publication.title;
-	//textViewAbstract.text = publication.abstractContent;
+	
+	float x = labelTitle.frame.origin.x;
+	float y = labelTitle.frame.origin.y + labelTitle.frame.size.height;
+	
+	CGRect frame = CGRectMake(x, y, labelTitle.frame.size.width, labelTitle.frame.size.height);
+	UILabel* label = [[UILabel alloc]initWithFrame:frame];
+	label.textColor = UIColor.blackColor;
 
+	
+	if (publication.authors != NULL)
+	{
+		for (int i = 0; i < [publication.authors count]; i++) {
+			if (i == 0)
+			{
+				[label setText:[[publication.authors objectAtIndex:i] alias]];
+			}
+			else
+			{
+				[label setText:[NSString stringWithFormat:@"%@, %@", label.text, [[publication.authors objectAtIndex:i] alias]]];
+			}
+		}	
+	}
+	
+	[self.contentView addSubview:label];
+
+}
+
+-(float)getHeight
+{
+	//TODO orientation dependent
+	if (self.entity == NULL)
+		return 0;
+	Publication* publication = self.entity;
+	if (publication.authors == NULL)
+		return 47;
+	return 2*47;
+}
+
+-(IBAction) detailViewClicked:(id)sender
+{
+	if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(showDetail:)])
+	{
+		PublicationDetailView *detailView = [[PublicationDetailView alloc] 
+											 initWithNibName:@"PublicationDetailView" 
+											 bundle:[NSBundle mainBundle]];
+
+		[delegate showDetail:detailView];
+	}
 }
 
 

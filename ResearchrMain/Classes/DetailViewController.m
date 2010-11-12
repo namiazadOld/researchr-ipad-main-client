@@ -85,7 +85,8 @@
 	ResearchrProxy *proxy = [[ResearchrProxy alloc] init];
 	NSMutableArray *publications = [proxy searchPublication:keyword];
 	
-    BaseListViewController* resultsView = [Publication getListView:publications];
+    BaseListViewController* resultsView = [[Publication getPresenter] getListView:publications];
+	resultsView.containerControl = self;
 	[self.container addSubview:resultsView.view];
 	
 }
@@ -107,6 +108,11 @@
 	[self dismissModalViewControllerAnimated:YES];
 	
 	NSLog(searchBar.text);
+}
+
+-(void) showDetail: (BaseDetailView*)detailView
+{
+	self.currentView = detailView.view;
 }
 
 

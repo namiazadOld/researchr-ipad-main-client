@@ -1,17 +1,15 @@
     //
-//  BaseSummaryViewController.m
+//  PublicationDetailView.m
 //  ResearchrMain
 //
-//  Created by Nami on 10/13/10.
+//  Created by Nami on 11/12/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "BaseSummaryViewController.h"
+#import "PublicationDetailView.h"
 
 
-
-@implementation BaseSummaryViewController
-@synthesize entity, delegate;
+@implementation PublicationDetailView
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -36,11 +34,6 @@
     return YES;
 }
 
--(void)initWithEntity:(BaseEntity*)entity
-{
-	
-}
-
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -55,6 +48,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+
 
 
 - (void)dealloc {
