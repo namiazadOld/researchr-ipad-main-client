@@ -20,10 +20,12 @@
 @interface BaseSummaryViewController : UITableViewCell {
 	BaseEntity* entity;
 	id<DetailViewRequested> delegate;	
+	//id container;
 }
 
 @property (nonatomic, retain) BaseEntity* entity;
 @property (assign) id<DetailViewRequested> delegate;
+//@property (nonatomic, retain) id container;
 
 -(void)initWithEntity:(BaseEntity*)entity;
 -(float)getHeight;

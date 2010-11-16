@@ -7,6 +7,7 @@
 //
 
 #import "PublicationDetailView.h"
+#import "PublicationAbstractView.h"
 
 
 @implementation PublicationDetailView
@@ -21,12 +22,29 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    
+	
+	PublicationAbstractView *abstractView = [[PublicationAbstractView alloc] 
+											 initWithNibName:@"PublicationAbstractView" 
+											 bundle:[NSBundle mainBundle]];
+	
+	abstractView.title = @"Abstract";
+	abstractView.tabBarItem.image = [UIImage imageNamed:@"179-notepad.png"];
+		
+	
+	UITabBarController *tabController = [[UITabBarController alloc]init];
+	tabController.view.frame = CGRectMake(0, 0, 320, 460);
+
+	[tabController setViewControllers:[NSArray arrayWithObjects:abstractView, nil]];
+	
+	[abstractView release];
+	[self.view addSubview:tabController.view];
+	
 }
-*/
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

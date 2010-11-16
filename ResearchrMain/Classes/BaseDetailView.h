@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseDetailView : UIViewController {
-
+	UIView *previousView;
 }
+
+@property (nonatomic, retain) UIView *previousView;
 
 @end

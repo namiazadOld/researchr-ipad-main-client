@@ -71,6 +71,7 @@
 	
 		BaseSummaryViewController *cell = [[[entity class] getPresenter] getSummaryView:entity];
 		[cell setDelegate:self.containerControl];
+		//[cell setContainer:self.view];
 		
 		[summaries addObject:cell];
 	}
