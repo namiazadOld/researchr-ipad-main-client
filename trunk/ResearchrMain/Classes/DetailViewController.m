@@ -112,6 +112,7 @@
 
 -(void) showDetail: (BaseDetailView*)detailView
 {
+	//detailView.previousView = sender;
 	self.currentView = detailView.view;
 }
 

@@ -1,17 +1,16 @@
     //
-//  BaseDetailView.m
+//  PublicationAbstractView.m
 //  ResearchrMain
 //
-//  Created by Nami on 11/12/10.
+//  Created by Nami on 11/16/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "BaseDetailView.h"
+#import "PublicationAbstractView.h"
 
 
-@implementation BaseDetailView
+@implementation PublicationAbstractView
 
-@synthesize previousView;
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

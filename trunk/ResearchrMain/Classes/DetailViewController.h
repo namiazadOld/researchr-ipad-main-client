@@ -37,5 +37,6 @@
 
 -(IBAction) signIn: (id)sender;
 -(void) recursiveParser: (NSString*)key date:(id)value;
+-(void) showDetail: (BaseDetailView*)detailView;
 
 @end
